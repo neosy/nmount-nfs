@@ -1,2 +1,2 @@
 # nmount-nfs
-Auto nfs mounting
+Auto NFS mounting
