@@ -15,7 +15,7 @@
 source /usr/local/lib/neosy/nfiles_lib.sh
 source /usr/local/lib/neosy/nmount_lib.sh
 
-CONFIG_PATH=/usr/local/etc/neosy
+CONFIG_PATH=/usr/local/etc
 CONFIG_FILENAME=nmount-nfs.conf
 CONFIG_FILE=${CONFIG_PATH}/${CONFIG_FILENAME}
 SERVICE_DELAY=30s

@@ -4,7 +4,7 @@ After=syslog.target network.target
 
 [Service]
 User=root
-ExecStart=/usr/local/bin/neosy/nmount-nfs.sh -d
+ExecStart=/usr/local/bin/sh_n/nmount-nfs.sh -d
 #ExecReload=/bin/kill -s HUP $MAINPID
 ExecStop=/bin/bash -c '/bin/kill -s QUIT $MAINPID'
 Type=simple
