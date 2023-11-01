@@ -12,8 +12,8 @@
 # Version 0.1
 #==================================
 
-source /usr/local/lib/neosy/nfiles_lib.sh
-source /usr/local/lib/neosy/nmount_lib.sh
+source /usr/local/lib/sh_n/nfiles_lib.sh
+source /usr/local/lib/sh_n/nmount_lib.sh
 
 CONFIG_PATH=/usr/local/etc
 CONFIG_FILENAME=nmount-nfs.conf
