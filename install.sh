@@ -48,7 +48,6 @@ function main
     install_depends
     install_lib
     install_app
-    exit
     install_config
     install_service
 }
