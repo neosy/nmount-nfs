@@ -1,5 +1,9 @@
 # Library for working with mount
+# Author: Neosy <neosy.dev@gmail.com>
+#
+#==================================
 # Version 0.2
+#==================================
 
 HOST_NAME=`hostname | awk -F. '{print $1}'`
 

@@ -1,4 +1,6 @@
 # Library for working with package managers
+# Author: Neosy <neosy.dev@gmail.com>
+#
 #==================================
 # Version 0.1
 #==================================
@@ -44,12 +46,18 @@ function app_install
 {
     local app_name=$1
     local package=${2:-${app_name}}
+    local isExit=${3:-1}
+    local ret=0
     local p_manager=$(pm_get)
     local cmd_line=""
 
     if [ -z "$p_manager" ]; then
         echo "Package manager not found"
-        return 1
+        ret=1
+        if [ $isExit ==  1 ]; then
+            exit 1
+        fi
+        return $ret
     fi
 
     if [[ "$p_manager" =~ ^(dnf|yum|apt|apt-get|zypper)$ ]]; then
@@ -60,8 +68,8 @@ function app_install
 
     app_exist $app_name
     if [ $? == 0 ]; then
-        echo "$cmd_line $package"
+        $cmd_line $package
     fi
 
-    return 0
+    return $ret
 }

@@ -1,4 +1,9 @@
-#!/bin/bash
+# Library for installing
+# Author: Neosy <neosy.dev@gmail.com>
+#
+#==================================
+# Version 0.1
+#==================================
 
 SOURCE_LIB_PATH=""
 SOURCE_BIN_PATH=""

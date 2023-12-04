@@ -1,10 +1,22 @@
 # Library for working with files
-###### Version 0.4
+# Author: Neosy <neosy.dev@gmail.com>
+#
+#==================================
+# Version 0.6
+# 1) Fix error fs_name()
+#==================================
+# Version 0.5
+# 1) Add function mount_check $1
+#    $1 - path
+#==================================
+# Version 0.4
 # 1) Add function fs_name $1
 #    $1 - uuid disk
 # 2) Exemple function diskSpace_check. Check disk space by uuid
 #    diskSpace_check $(fs_name 2b025bf0-6148-4165-85c3-d0b07d977a2d) 5
-###### Version 0.3
+#==================================
+# Version 0.3
+#==================================
 
 source /usr/local/lib/sh_n/ntelegram_lib.sh
 
@@ -128,6 +140,11 @@ fs_name() {
     local blkid_path=`whereis blkid | awk '{print $2}'`
 
     local name=`$blkid_path | grep $uuid | awk '{print $1}' | sed 's/://'`
+    if [ -z "$name" ]; then
+      name=`ls -l /dev/disk/by-uuid | grep $uuid | awk '{print $NF}' | awk -F'/' '{print $NF}'`
+      name="/dev/$name"
+    fi
+
     echo $name
 }
 
@@ -157,4 +174,13 @@ function line_parsing
     do
         array[index]=`echo "${array[index]}" | sed 's/#sp;/ /g' | sed 's/"//g'`
     done
+}
+
+function mount_check
+{
+    local path="$1"
+
+    mountpoint -q "$path"
+
+    return $?
 }

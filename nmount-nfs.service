@@ -1,5 +1,5 @@
 [Unit]
-Description=Neosy check and mount nfs
+Description=Check and mount nfs @Neosy
 After=syslog.target network.target
 
 [Service]
