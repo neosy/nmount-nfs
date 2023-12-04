@@ -2,6 +2,9 @@
 # Author: Neosy <neosy.dev@gmail.com>
 #
 #==================================
+# Version 0.2
+#   1. Fix log_file_conf()
+#==================================
 # Version 0.1
 #==================================
 
@@ -67,9 +70,11 @@ function check_root
 
 function log_file_conf
 {
-    LOG_FILE_NAME="$1"
-    LOG_PATH="$2"
-    LOG_FILE="$LOG_PATH/$LOG_FILE_NAME"
+    LOG_PATH="$1"
+    LOG_FILE_NAME="$2"
+    if [ -n "$LOG_FILE_NAME" ]; then
+        LOG_FILE="$LOG_PATH/$LOG_FILE_NAME"
+    fi
 }
 
 function user_read
