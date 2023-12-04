@@ -69,7 +69,7 @@ function main
 {
     local daemon=false
 
-    if [[ $PARM_1 == "-umount" ]]; then
+    if [[ $PARM_1 == "--umount" ]]; then
         umount_from_config
         exit 0
     fi
