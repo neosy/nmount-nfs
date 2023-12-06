@@ -78,7 +78,7 @@ function main
         daemon=true
     fi
 
-    if [ ! -d ${CONFIG_PATH}} ]; then
+    if [ ! -d ${CONFIG_PATH} ]; then
         mkdir -p ${CONFIG_PATH}
     fi
 
